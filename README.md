@@ -1,8 +1,11 @@
+
+
+
 # GuardLayerImage
 
 チュートリアルなどで「特定のボタン以外は半透明の黒のレイヤーで覆う」際に便利なスクリプトおよびシェーダー。
 
-<img width="345" alt="ss1" src="https://user-images.githubusercontent.com/1532322/132948672-c3ee7cdb-db29-48bf-8fe4-95aa67b76398.png">
+https://user-images.githubusercontent.com/1532322/132970508-f5f6e815-0af6-4706-bcc5-1b9c547b6af6.mov
 
 ## 動作条件
 

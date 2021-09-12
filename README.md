@@ -10,5 +10,12 @@
 
 ## 使い方
 
-- SampleScene を実行するとサンプルが動作する。
-- Canvas にアタッチされている TutorialSampleCanvas スクリプトの中身を見ていくとわかりやすい。
+1. `Canvas` の前面のほう（ヒエラルキーの下のほう）に `GuardLayerImage` をアタッチした `GameObject` を置く。
+2. `GuardLayerImage.SetTargetObject(GameObject object)` に表示したいオブジェクトを設定する。
+    - 対象オブジェクトが `Image` なら、設定されている `Sprite` で切り抜かれる。
+    - 対象オブジェクトが `Image` でないなら、`RectTransform` の形で切り抜かれる。
+3. `GuardLayerImage` の `margin`（対象オブジェクトの周囲の隙間）をいい感じに調整する。
+
+## サンプル
+
+- SampleScene を実行する

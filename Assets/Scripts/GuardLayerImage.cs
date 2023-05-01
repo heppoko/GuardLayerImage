@@ -213,9 +213,14 @@ namespace HeppokoUtil
             float fullWidth = rectTransform.rect.size.x;
             float fullHeight = rectTransform.rect.size.y;
 
-            scaleX = targetRectTransform.lossyScale.x / canvas.transform.lossyScale.x;
-            scaleY = targetRectTransform.lossyScale.y / canvas.transform.lossyScale.y;
+            var canvasScaleX = canvas.transform.lossyScale.x;
+            var canvasScaleY = canvas.transform.lossyScale.y;
+            scaleX = targetRectTransform.lossyScale.x / canvasScaleX;
+            scaleY = targetRectTransform.lossyScale.y / canvasScaleY;
 
+            targetPos.x /= canvasScaleX;
+            targetPos.y /= canvasScaleY;
+            
             float centerWidth = targetRect.size.x * scaleX;
             float centerHeight = targetRect.size.y * scaleY;
 
@@ -301,9 +306,14 @@ namespace HeppokoUtil
             float spriteRatio = imageWidth / imageHeight;
             float rectRatio = targetRect.width / targetRect.height;
 
-            scaleX = targetRectTransform.lossyScale.x / canvas.transform.lossyScale.x;
-            scaleY = targetRectTransform.lossyScale.y / canvas.transform.lossyScale.y;
+            var canvasScaleX = canvas.transform.lossyScale.x;
+            var canvasScaleY = canvas.transform.lossyScale.y;
+            scaleX = targetRectTransform.lossyScale.x / canvasScaleX;
+            scaleY = targetRectTransform.lossyScale.y / canvasScaleY;
 
+            targetPos.x /= canvasScaleX;
+            targetPos.y /= canvasScaleY;
+            
             float centerWidth = targetRect.size.x * scaleX;
             float centerHeight = targetRect.size.y * scaleY;
 
@@ -825,6 +835,8 @@ namespace HeppokoUtil
         public override bool IsRaycastLocationValid(Vector2 screenPoint, Camera eventCamera)
         {
             bool result = true;
+            screenPoint.x /= canvas.transform.lossyScale.x;
+            screenPoint.y /= canvas.transform.lossyScale.y;
             if (centerL <= screenPoint.x && screenPoint.x <= centerR &&
                 centerB <= screenPoint.y && screenPoint.y <= centerT)
             {
